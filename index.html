@@ -4,12 +4,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Jiwon</title>
   </head>
   <body>
-    <header id="header"></header>
-    <section id="intro" class="section"></section>
-    <section id="project" class="section"></section>
-    <footer id="footer"></footer>
+    <header id="header">
+      <h1 id="logo">*</h1>
+      <nav id="gnb">
+        <h2 class="blind">gnb</h2>
+        <div class="tab">
+          <button class="tablinks active" onclick="openTab(event, 'home')">Home</button>
+          <button class="tablinks" onclick="openTab(event, 'about')">About</button>
+          <button class="tablinks" onclick="openTab(event, 'project')">Project</button>
+        </div>
+      </nav>
+    </header>
+    <section id="home" class="tabcontent active">
+      <div>
+        HOME ipsum dolor sit, amet consectetur adipisicing elit. Voluptas ab atque aliquam eos, aliquid officia alias! Assumenda exercitationem
+        laborum dicta quaerat impedit magni placeat laboriosam sequi modi? Quaerat sunt hic reiciendis placeat assumenda nesciunt deserunt tempora,
+        esse consectetur magni vel accusantium quas architecto quae, laborum magnam est repellat ut? Reiciendis earum illo tempora, temporibus fuga
+        voluptate modi minima, ducimus inventore repudiandae neque incidunt odio obcaecati voluptatum in voluptatibus ipsa recusandae perferendis rem
+        commodi tenetur fugit? Nesciunt nemo atque ducimus blanditiis eligendi maiores? Vero placeat nobis tempora adipisci dignissimos recusandae
+        natus sed delectus excepturi reprehenderit quisquam odio laboriosam eum, nemo esse!
+      </div>
+    </section>
+    <section id="about" class="tabcontent"></section>
+    <section id="project" class="tabcontent"></section>
+
+    <script>
+      const openTab = function (event, tabName) {
+        let i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName('tabcontent');
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].className = tabcontent[i].className.replace(' active', '');
+        }
+
+        tablinks = document.getElementsByClassName('tablinks');
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(' active', '');
+        }
+
+        document.getElementById(tabName).className += ' active';
+        event.currentTarget.className += ' active';
+      };
+    </script>
   </body>
 </html>

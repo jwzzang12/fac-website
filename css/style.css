@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: left;
+  cursor: default;
+}
+
+button {
+  all: unset;
+}
+
+.blind {
+  display: none;
+}
+
+body {
+  width: auto;
+  height: 100vh;
+  position: relative;
+  padding: 10vw;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+}
+
+.tabcontent {
+  display: none;
+  height: calc(100vh - 20vw);
+  position: relative;
+  border: 1px solid #000;
+}
+.tabcontent.active {
+  display: block;
+}
+.tabcontent div {
+  position: absolute;
+  bottom: 0;
+  padding: 5vw;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 20vw);
+  position: absolute;
+  z-index: 100;
+  padding: 5vw;
+}
+
+.tablinks.active {
+  color: rgb(255, 0, 0);
+}
