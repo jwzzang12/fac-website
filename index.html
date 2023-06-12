@@ -33,6 +33,7 @@
     <section id="project" class="tabcontent"></section>
 
     <script>
+      //menu
       const openTab = function (event, tabName) {
         let i, tabcontent, tablinks;
 
@@ -49,6 +50,17 @@
         document.getElementById(tabName).className += ' active';
         event.currentTarget.className += ' active';
       };
+
+      //json
+      const getJson = () => {
+        fetch('./data/data.json')
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => console.log(data));
+      };
+
+      getJson();
     </script>
   </body>
 </html>
