@@ -31,7 +31,7 @@
     </section>
     <section id="about" class="tabcontent"></section>
     <section id="project" class="tabcontent"></section>
-
+    <div class="bg"></div>
     <script>
       //menu
       const openTab = function (event, tabName) {
@@ -61,6 +61,8 @@
       };
 
       getJson();
+      console.log(document.querySelector('#logo').clientWidth);
+      console.log(document.querySelector('#logo').clientHeight);
     </script>
   </body>
 </html>
