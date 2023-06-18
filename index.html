@@ -31,6 +31,8 @@
     </section>
     <section id="about" class="tabcontent"></section>
     <section id="project" class="tabcontent"></section>
+    <div onclick="prev()">prevbtn</div>
+    <div onclick="next()">nextbtn</div>
     <div class="bg"></div>
     <script>
       //menu
@@ -51,13 +53,29 @@
         event.currentTarget.className += ' active';
       };
 
-      //json
+      //project
+      let page = 3;
+      const prev = () => {
+        if (page !== 3) {
+          page = page - 3;
+        }
+        getJson();
+      };
+      const next = () => {
+        if (page === 3) {
+          page = page + 3;
+        }
+        getJson();
+      };
       const getJson = () => {
         fetch('./data/data.json')
           .then((res) => {
             return res.json();
           })
-          .then((data) => console.log(data));
+          .then((data) => {
+            console.log(data);
+            document.getElementById('project').innerHTML = data.items.filter((el, idx) => idx < page).map((el) => `<li>${el.title}</li>`);
+          });
       };
 
       getJson();
