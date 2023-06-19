@@ -30,7 +30,9 @@
       </div>
     </section>
     <section id="about" class="tabcontent"></section>
-    <section id="project" class="tabcontent"></section>
+    <section id="project" class="tabcontent">
+      <div><ul></ul></div>
+    </section>
     <div onclick="prev()">prevbtn</div>
     <div onclick="next()">nextbtn</div>
     <div class="bg"></div>
@@ -54,33 +56,35 @@
       };
 
       //project
-      let page = 3;
+      let startIdx = 0;
+      let dataNum = 3;
+
       const prev = () => {
-        if (page !== 3) {
-          page = page - 3;
+        if (startIdx !== 0) {
+          startIdx = startIdx - 3;
+          dataNum = dataNum - 3;
         }
-        getJson();
-      };
-      const next = () => {
-        if (page === 3) {
-          page = page + 3;
-        }
-        getJson();
-      };
-      const getJson = () => {
-        fetch('./data/data.json')
-          .then((res) => {
-            return res.json();
-          })
-          .then((data) => {
-            console.log(data);
-            document.getElementById('project').innerHTML = data.items.filter((el, idx) => idx < page).map((el) => `<li>${el.title}</li>`);
-          });
+        getData();
       };
 
-      getJson();
-      console.log(document.querySelector('#logo').clientWidth);
-      console.log(document.querySelector('#logo').clientHeight);
+      const next = () => {
+        startIdx = startIdx + 3;
+        dataNum = dataNum + 3;
+        getData();
+      };
+
+      async function getData() {
+        let obj;
+
+        const res = await fetch('./data/data.json');
+
+        obj = await res.json();
+
+        document.querySelector('#project div ul').innerHTML = obj.items
+          .map((el) => `<li>${el.title}</li>`)
+          .filter((el, idx) => startIdx <= idx && idx < dataNum);
+      }
+      getData();
     </script>
   </body>
 </html>
