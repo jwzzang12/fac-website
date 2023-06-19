@@ -56,8 +56,23 @@
       };
 
       //project
+
       let startIdx = 0;
       let dataNum = 3;
+      let dataLength;
+
+      async function getData() {
+        let obj;
+
+        const res = await fetch('./data/data.json');
+
+        obj = await res.json();
+        dataLength = obj.items.length;
+        document.querySelector('#project div ul').innerHTML = obj.items
+          .map((el) => `<li>${el.title}</li>`)
+          .filter((el, idx) => startIdx <= idx && idx < dataNum);
+      }
+      getData();
 
       const prev = () => {
         if (startIdx !== 0) {
@@ -68,23 +83,12 @@
       };
 
       const next = () => {
-        startIdx = startIdx + 3;
-        dataNum = dataNum + 3;
+        if (dataNum < dataLength) {
+          startIdx = startIdx + 3;
+          dataNum = dataNum + 3;
+        }
         getData();
       };
-
-      async function getData() {
-        let obj;
-
-        const res = await fetch('./data/data.json');
-
-        obj = await res.json();
-
-        document.querySelector('#project div ul').innerHTML = obj.items
-          .map((el) => `<li>${el.title}</li>`)
-          .filter((el, idx) => startIdx <= idx && idx < dataNum);
-      }
-      getData();
     </script>
   </body>
 </html>
