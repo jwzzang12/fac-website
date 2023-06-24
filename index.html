@@ -33,8 +33,8 @@
     <section id="project" class="tabcontent">
       <div><ul></ul></div>
     </section>
-    <div onclick="prev()">prevbtn</div>
-    <div onclick="next()">nextbtn</div>
+    <div onclick="prev()"><</div>
+    <div onclick="next()">></div>
     <div class="bg"></div>
     <script>
       //menu
@@ -70,7 +70,8 @@
         dataLength = obj.items.length;
         document.querySelector('#project div ul').innerHTML = obj.items
           .map((el) => `<li>${el.title}</li>`)
-          .filter((el, idx) => startIdx <= idx && idx < dataNum);
+          .filter((el, idx) => startIdx <= idx && idx < dataNum)
+          .join('');
       }
       getData();
 
