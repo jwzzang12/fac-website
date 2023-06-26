@@ -1,3 +1,16 @@
+@import 'vars';
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: $pink-color;
+  background: $orange-color;
+}
+::selection {
+  color: $pink-color;
+
+  background: $orange-color;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,10 +20,6 @@
 }
 button {
   all: unset;
-}
-h1 {
-  all: unset;
-  display: block;
 }
 li {
   all: unset;
@@ -24,75 +33,66 @@ body {
   width: auto;
   height: 100vh;
   position: relative;
-  padding: 10vw;
+  padding: 5vw;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 15px;
-}
-.bg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -100;
-  background: radial-gradient(circle, transparent 25%, #ffffff 26%), linear-gradient(0deg, transparent 44%, #000000 45%, #000000 55%, transparent 56%),
-    linear-gradient(90deg, transparent 44%, #000000 45%, #000000 55%, transparent 56%);
-  background-size: 1em 1em;
-  opacity: 1;
-  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  line-height: 2rem;
+  background-color: $main-color;
 }
 
 .tabcontent {
   display: none;
+  justify-content: center;
+  align-items: center;
   height: calc(100vh - 20vw);
   position: relative;
-  border: 1px solid #000;
-  background-color: #fff;
   &.active {
-    display: block;
+    display: flex;
   }
   div {
-    position: absolute;
-    bottom: 0;
     padding: 5vw;
   }
 }
 
 #header {
-  // display: flex;
-  // justify-content: space-between;
-  width: calc(100% - 20vw);
+  width: calc(100%);
   position: absolute;
+  bottom: 0;
+  left: 0;
   z-index: 100;
   padding: 5vw;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: $pink-color;
+  background: $sub-color;
 }
 
 .tablinks {
   &.active {
-    border-bottom: 1px solid #000;
+    padding: 0 5px;
+    background: $orange-color;
   }
 }
 .tab {
-  text-align: right;
-}
-#logo {
-  width: 1rem;
-  height: 1rem;
-  position: absolute;
-  font-size: 2.5rem;
-  line-height: 1;
-  // border: 1px solid #000;
-  text-align: center;
-  &:hover {
-    animation: spin 1s linear 0s infinite;
-  }
+  display: flex;
+  justify-content: space-around;
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.btns {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  li {
+    width: 30vw;
+    margin: 1vw;
+    background-color: $pink-color;
   }
 }

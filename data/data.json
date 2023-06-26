@@ -8,7 +8,7 @@
       "stack": "React | Firebase | SCSS"
     },
     {
-      "title": "Toucan Coffee Shop [5]",
+      "title": "Toucan Coffee Shop",
       "desc": "Utilized React.js to build the Menu page and implement a user-friendly Cart hamburger menu • Elevated team members’ knowledge with prior React experience • Practiced Agile by engaging in weekly team meetings, tracking progress on Trello",
       "github": "https://github.com/chingu-voyages/v41-toucans-team-04",
       "link": "https://development--toucan-coffee.netlify.app",
@@ -36,7 +36,7 @@
       "stack": "React | Redux | SCSS"
     },
     {
-      "title": "The Weather App [2]",
+      "title": "The Weather App",
       "desc": "A simple weather app built with React using Openweather API • Utilized Geolocation’s customer hook to instantly locate user • Became well-versed with Github branching",
       "github": "https://github.com/jwzzang12/weather-app/tree/moon",
       "link": "https://moonjiwon-weather-app.netlify.app/",

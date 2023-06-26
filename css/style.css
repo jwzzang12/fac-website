@@ -1,3 +1,14 @@
+::-moz-selection {
+  /* Code for Firefox */
+  color: #ffdede;
+  background: #ff8551;
+}
+
+::selection {
+  color: #ffdede;
+  background: #ff8551;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +19,6 @@
 
 button {
   all: unset;
-}
-
-h1 {
-  all: unset;
-  display: block;
 }
 
 li {
@@ -28,72 +34,65 @@ body {
   width: auto;
   height: 100vh;
   position: relative;
-  padding: 10vw;
+  padding: 5vw;
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 15px;
-}
-
-.bg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -100;
-  background: radial-gradient(circle, transparent 25%, #ffffff 26%), linear-gradient(0deg, transparent 44%, #000000 45%, #000000 55%, transparent 56%), linear-gradient(90deg, transparent 44%, #000000 45%, #000000 55%, transparent 56%);
-  background-size: 1em 1em;
-  opacity: 1;
-  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  line-height: 2rem;
+  background-color: #faf0e4;
 }
 
 .tabcontent {
   display: none;
+  justify-content: center;
+  align-items: center;
   height: calc(100vh - 20vw);
   position: relative;
-  border: 1px solid #000;
-  background-color: #fff;
 }
 .tabcontent.active {
-  display: block;
+  display: flex;
 }
 .tabcontent div {
-  position: absolute;
-  bottom: 0;
   padding: 5vw;
 }
 
 #header {
-  width: calc(100% - 20vw);
+  width: 100%;
   position: absolute;
+  bottom: 0;
+  left: 0;
   z-index: 100;
   padding: 5vw;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffdede;
+  background: #9bcdd2;
 }
 
 .tablinks.active {
-  border-bottom: 1px solid #000;
+  padding: 0 5px;
+  background: #ff8551;
 }
 
 .tab {
-  text-align: right;
+  display: flex;
+  justify-content: space-around;
 }
 
-#logo {
-  width: 1rem;
-  height: 1rem;
+.btns {
+  display: flex;
   position: absolute;
-  font-size: 2.5rem;
-  line-height: 1;
+  bottom: 0;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
   text-align: center;
 }
-#logo:hover {
-  animation: spin 1s linear 0s infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul li {
+  width: 30vw;
+  margin: 1vw;
+  background-color: #ffdede;
 }
