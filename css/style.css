@@ -14,8 +14,7 @@
   padding: 0;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
-  font-weight: 600;
-  color: #111;
+  color: #002b5b;
   box-sizing: border-box;
   cursor: default;
 }
@@ -64,11 +63,11 @@ body {
 }
 
 #mainTitle span {
-  font-family: "Geologica", sans-serif;
   display: block;
+  font-family: "Geologica", sans-serif;
   color: #fff;
-  text-shadow: -1px -1px 0 #6096b4, 1px -1px 0 #6096b4, -1px 1px 0 #6096b4, 1px 1px 0 #6096b4;
   letter-spacing: 5px;
+  text-shadow: -1px -1px 0 #6096b4, 1px -1px 0 #6096b4, -1px 1px 0 #6096b4, 1px 1px 0 #6096b4;
 }
 #mainTitle span.small {
   font-size: 1.5rem;
@@ -82,28 +81,34 @@ body {
 
 .tabcontent {
   display: none;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 20vw);
+  height: 100vh;
   position: relative;
 }
 .tabcontent.active {
-  display: flex;
+  display: block;
 }
-.tabcontent div {
-  padding: 5vw;
+.tabcontent > div {
+  padding-top: 5vw;
+  border: 1px solid #fff;
 }
 
 #header {
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 100;
-  padding: 5vw;
+  padding: 2.5vw 5vw;
   font-size: 1.2rem;
   font-weight: 800;
+  background-color: #002b5b;
 }
 
+.tablinks {
+  color: #eee9da;
+}
 .tablinks.active {
-  color: #111;
+  text-decoration: underline;
 }
 
 .btns {
@@ -112,16 +117,66 @@ body {
   bottom: 0;
 }
 
-ul {
+#home div {
+  line-height: 2rem;
+}
+
+#about .userName {
+  font-size: 12px;
+}
+#about .userName span {
+  text-decoration: underline;
+  font-size: 25px;
+  font-weight: 700;
+}
+#about .profile {
+  display: flex;
+  background: #002b5b;
+  align-items: center;
+}
+#about .profileImg {
+  background: #fff;
+  width: 12rem;
+}
+#about .profileImg img {
+  width: 100%;
+  vertical-align: top;
+}
+#about .summary span {
+  color: #eee9da;
+}
+#about .summary .content {
+  background: #fff;
+}
+#about .aboutMe .boxTitle {
+  background: #002b5b;
+  display: inline-block;
+  color: #fff;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#about .aboutMe .basicInfoBox {
+  border-top: 5px solid #002b5b;
+  background: #fff;
+  padding: 0.5rem;
+}
+#about .aboutMe .title {
+  background: #93bfcf;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#about .aboutMe .basicInfo {
+  border: 1px solid #bdcdd6;
+}
+
+#project ul {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
 }
-ul li {
+#project ul li {
   width: 30vw;
   margin: 1vw;
-}
-
-#home div {
-  line-height: 2rem;
 }

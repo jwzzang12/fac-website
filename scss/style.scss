@@ -15,8 +15,7 @@
   padding: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 16px;
-  font-weight: 600;
-  color: #111;
+  color: $navy;
   box-sizing: border-box;
   cursor: default;
 }
@@ -68,11 +67,11 @@ body {
 }
 #mainTitle {
   span {
-    font-family: 'Geologica', sans-serif;
     display: block;
+    font-family: 'Geologica', sans-serif;
     color: #fff;
-    text-shadow: -1px -1px 0 $blue, 1px -1px 0 $blue, -1px 1px 0 $blue, 1px 1px 0 $blue;
     letter-spacing: 5px;
+    text-shadow: -1px -1px 0 $blue, 1px -1px 0 $blue, -1px 1px 0 $blue, 1px 1px 0 $blue;
     &.small {
       font-size: 1.5rem;
     }
@@ -86,29 +85,35 @@ body {
 }
 .tabcontent {
   display: none;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 20vw);
+  // justify-content: center;
+  // align-items: center;
+  height: 100vh;
   position: relative;
   &.active {
-    display: flex;
+    display: block;
   }
-  div {
-    padding: 5vw;
+  > div {
+    padding-top: 5vw;
+    border: 1px solid #fff;
   }
 }
 
 #header {
   width: calc(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 100;
-  padding: 5vw;
+  padding: 2.5vw 5vw;
   font-size: 1.2rem;
   font-weight: 800;
+  background-color: $navy;
 }
 
 .tablinks {
+  color: $white;
   &.active {
-    color: #111;
+    text-decoration: underline;
   }
 }
 
@@ -118,17 +123,78 @@ body {
   bottom: 0;
 }
 
-ul {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  li {
-    width: 30vw;
-    margin: 1vw;
-  }
-}
 #home {
   div {
     line-height: 2rem;
+  }
+}
+#about {
+  .userName {
+    font-size: 12px;
+    span {
+      text-decoration: underline;
+      font-size: 25px;
+      font-weight: 700;
+    }
+  }
+  .profile {
+    display: flex;
+    background: $navy;
+    // justify-content: center;
+    align-items: center;
+  }
+  .profileImg {
+    background: #fff;
+
+    width: 12rem;
+    img {
+      width: 100%;
+      vertical-align: top;
+    }
+  }
+  .summary {
+    span {
+      color: $white;
+    }
+    .content {
+      background: #fff;
+    }
+  }
+  .aboutMe {
+    .boxTitle {
+      background: $navy;
+      display: inline-block;
+      color: #fff;
+      padding: 10px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .basicInfoBox {
+      border-top: 5px solid $navy;
+      background: #fff;
+      padding: 0.5rem;
+    }
+    .title {
+      background: $skyblue;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .basicInfo {
+      border: 1px solid $grey;
+    }
+  }
+}
+
+#project {
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    li {
+      width: 30vw;
+      margin: 1vw;
+    }
   }
 }
