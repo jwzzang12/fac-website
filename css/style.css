@@ -28,6 +28,10 @@ li {
   display: block;
 }
 
+a {
+  all: unset;
+}
+
 .blind {
   display: none;
 }
@@ -87,10 +91,6 @@ body {
 .tabcontent.active {
   display: block;
 }
-.tabcontent > div {
-  padding-top: 5vw;
-  border: 1px solid #fff;
-}
 
 #header {
   width: 100%;
@@ -122,50 +122,89 @@ body {
 }
 
 #about .userName {
+  padding-top: 5vh;
   font-size: 12px;
 }
 #about .userName span {
-  text-decoration: underline;
   font-size: 25px;
   font-weight: 700;
+  text-decoration: underline;
+}
+#about .container {
+  display: flex;
+  margin-bottom: 3vh;
 }
 #about .profile {
   display: flex;
-  background: #002b5b;
   align-items: center;
+  padding: 3vw;
+  background-color: #002b5b;
+  flex: auto;
 }
 #about .profileImg {
-  background: #fff;
   width: 12rem;
+  margin-right: 3vw;
+  background-color: #fff;
 }
 #about .profileImg img {
   width: 100%;
   vertical-align: top;
 }
+#about .summary {
+  flex: auto;
+}
 #about .summary span {
   color: #eee9da;
 }
 #about .summary .content {
-  background: #fff;
+  background-color: #fff;
+}
+#about .contactBox {
+  font-weight: 700;
+  width: 15rem;
+  margin-left: 1rem;
+  background-color: #fff;
+}
+#about .contactBox .contact {
+  padding: 0.5em 1em;
+  color: #fff;
+  text-align: center;
+  background-color: #002b5b;
+}
+#about .contactBox ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+#about .contactBox li {
+  width: 100%;
+  background-color: #ee6833;
+  text-align: center;
+  padding: 0.5em 0;
+}
+#about .contactBox li:not(:last-child) {
+  margin-bottom: 1rem;
 }
 #about .aboutMe .boxTitle {
-  background: #002b5b;
   display: inline-block;
-  color: #fff;
   padding: 10px;
+  color: #fff;
+  background-color: #002b5b;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 #about .aboutMe .basicInfoBox {
-  border-top: 5px solid #002b5b;
-  background: #fff;
   padding: 0.5rem;
+  border-top: 5px solid #002b5b;
+  background-color: #fff;
 }
 #about .aboutMe .title {
-  background: #93bfcf;
+  margin-bottom: 1rem;
   padding: 0.5rem 1rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  background-color: #93bfcf;
 }
 #about .aboutMe .basicInfo {
   border: 1px solid #bdcdd6;

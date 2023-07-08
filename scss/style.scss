@@ -26,6 +26,9 @@ li {
   all: unset;
   display: block;
 }
+a {
+  all: unset;
+}
 .blind {
   display: none;
 }
@@ -92,10 +95,6 @@ body {
   &.active {
     display: block;
   }
-  > div {
-    padding-top: 5vw;
-    border: 1px solid #fff;
-  }
 }
 
 #header {
@@ -130,56 +129,92 @@ body {
 }
 #about {
   .userName {
+    padding-top: 5vh;
     font-size: 12px;
     span {
-      text-decoration: underline;
       font-size: 25px;
       font-weight: 700;
+      text-decoration: underline;
     }
+  }
+  .container {
+    display: flex;
+    margin-bottom: 3vh;
   }
   .profile {
     display: flex;
-    background: $navy;
     // justify-content: center;
     align-items: center;
+    padding: 3vw;
+    background-color: $navy;
+    flex: auto;
   }
   .profileImg {
-    background: #fff;
-
     width: 12rem;
+    margin-right: 3vw;
+    background-color: #fff;
     img {
       width: 100%;
       vertical-align: top;
     }
   }
   .summary {
+    flex: auto;
     span {
       color: $white;
     }
     .content {
-      background: #fff;
+      background-color: #fff;
+    }
+  }
+  .contactBox {
+    font-weight: 700;
+    width: 15rem;
+    margin-left: 1rem;
+    background-color: #fff;
+    .contact {
+      padding: 0.5em 1em;
+      color: #fff;
+      text-align: center;
+      background-color: $navy;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    li {
+      width: 100%;
+      background-color: $orange;
+      text-align: center;
+      padding: 0.5em 0;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
     }
   }
   .aboutMe {
     .boxTitle {
-      background: $navy;
       display: inline-block;
-      color: #fff;
       padding: 10px;
+      color: #fff;
+      background-color: $navy;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
     }
 
     .basicInfoBox {
-      border-top: 5px solid $navy;
-      background: #fff;
       padding: 0.5rem;
+      border-top: 5px solid $navy;
+      background-color: #fff;
     }
     .title {
-      background: $skyblue;
+      margin-bottom: 1rem;
       padding: 0.5rem 1rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      background-color: $skyblue;
     }
     .basicInfo {
       border: 1px solid $grey;
