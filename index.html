@@ -19,12 +19,11 @@
         <h2 class="blind">gnb</h2>
         <div class="tab">
           <button class="tablinks active" onclick="openTab(event, 'home')">Home</button>
-          <button class="tablinks" onclick="openTab(event, 'about')">About</button>
           <button class="tablinks" onclick="openTab(event, 'project')">Project</button>
         </div>
       </nav>
     </header>
-    <!-- <div class="wave">
+    <div id="wave">
       <div id="mainTitle">
         <span class="small">THE</span>
         <span class="middle">SECRET</span>
@@ -32,15 +31,8 @@
         <span class="large">JIWON</span>
         <span class="large">MOON</span>
       </div>
-    </div> -->
-    <section id="home" class="tabcontent">
-      <div>
-        Hello, my name is Jiwon Moon and I am from South Korea. I’ve been studying coding since last May and completed a web-development bootcamp in
-        Seoul, where I gained hands-on experience in various front-end technologies such as HTML, CSS, JavaScript. Now, I am eager to take my skills
-        to the next level and kickstart my career in the tech industry in the UK.
-      </div>
-    </section>
-    <section id="about" class="tabcontent active">
+    </div>
+    <section id="home" class="tabcontent active">
       <div class="userName"><span>Jiwon Moon</span> from <strong>Seoul, South Korea</strong></div>
       <div class="container">
         <div class="profile">
@@ -53,16 +45,25 @@
         <div class="contactBox">
           <div class="contact">Contact</div>
           <ul>
-            <li><a href="">LinkedIn</a></li>
-            <li><a href="">Github</a></li>
-            <li><a href="">CV</a></li>
-            <li><a href="">Blog</a></li>
+            <li><a href="https://www.linkedin.com/in/mjiwon/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/jwzzang12" target="_blank">Github</a></li>
+            <li><a href="https://docs.google.com/document/d/1Gduypa5aUUqI5tIdTxdZO0ms0cBpSmjBPLaI7wdTNuc/edit?usp=sharing" target="_blank">CV</a></li>
+            <li><a href="https://jwzzang12.github.io" target="_blank">Blog</a></li>
           </ul>
         </div>
       </div>
       <div class="aboutMe">
         <div class="boxTitle">About Me</div>
-        <div class="basicInfoBox">
+        <div class="contentBox">
+          <div class="title">Tell me about yourself</div>
+          <div class="content">
+            Hello, I’ve been studying coding since last May and completed a web development bootcamp where I gained hands-on experience with front-end
+            technologies like HTML, CSS, JavaScript, and React. Additionally, I've been studying through online courses and projects, so I've
+            participated in a community where I collaborate with other developers on various projects. Now, I am eager to take my skills to the next
+            level and kickstart my career in the tech industry in the UK.
+          </div>
+        </div>
+        <!-- <div class="basicInfoBox">
           <div class="title">Basic Information</div>
           <ul class="basicInfo">
             <li>Occupation: :></li>
@@ -70,10 +71,11 @@
             <li>Religion: :></li>
             <li>Hobby: :></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </section>
     <section id="project" class="tabcontent">
+      <div>Hi, here are my projects.</div>
       <div class="container">
         <ul>
           <li>
@@ -116,8 +118,23 @@
         event.currentTarget.className += ' active';
       };
 
-      //project
+      //background
+      const wave = document.querySelector('#wave');
+      const mainTitle = document.querySelector('#mainTitle');
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(() => {
+          wave.classList.add('fadeOut');
+        }, 3000);
+        setTimeout(() => {
+          mainTitle.classList.add('fadeIn');
+        }, 1000);
+        setTimeout(() => {
+          wave.parentNode.removeChild(wave);
+          mainTitle.parentNode.removeChild(mainTitle);
+        }, 10000);
+      });
 
+      //project
       let startIdx = 0;
       let dataNum = 3;
       let dataLength;
