@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,700&display=swap"
+      rel="stylesheet"
+    />
     <title>Jiwon</title>
   </head>
   <body>
@@ -71,7 +74,23 @@
       </div>
     </section>
     <section id="project" class="tabcontent">
-      <div><ul></ul></div>
+      <div class="container">
+        <ul>
+          <li>
+            <div class="imgBox">
+              <a href="${el.website}" target="_blank"><img src="${el.image}" alt="" /></a>
+            </div>
+            <div class="prjInfo">
+              <div class="prjTitle"><a href="${el.website}" target="_blank">${el.title}</a></div>
+              <span class="stack">${el.stack}</span>
+              <div class="desc">${el.desc}</div>
+            </div>
+            <div class="linkBox">
+              <a href="${el.github}" target="_blank">More Info</a>
+            </div>
+          </li>
+        </ul>
+      </div>
       <div class="btns">
         <div onclick="prev()"><</div>
         <div onclick="next()">></div>
@@ -111,7 +130,20 @@
         obj = await res.json();
         dataLength = obj.items.length;
         document.querySelector('#project div ul').innerHTML = obj.items
-          .map((el) => `<li>${el.title}</li>`)
+          .map(
+            (el) => `<li>
+            <div class="imgBox">
+              <a href="${el.website}" target="_blank"><img src="${el.image}" alt="" /></a>
+            </div>
+            <div class="prjInfo">
+              <div class="prjTitle"><a href="${el.website}" target="_blank">${el.title}</a></div>
+              <span class="stack">${el.stack}</span>
+            </div>
+            <div class="linkBox">
+              <a href="${el.github}" target="_blank">More Info</a>
+            </div>
+          </li>`
+          )
           .filter((el, idx) => startIdx <= idx && idx < dataNum)
           .join('');
       }

@@ -12,7 +12,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 16px;
   color: #002b5b;
   box-sizing: border-box;
@@ -30,6 +30,7 @@ li {
 
 a {
   all: unset;
+  cursor: pointer;
 }
 
 .blind {
@@ -40,8 +41,6 @@ body {
   width: auto;
   height: 100vh;
   position: relative;
-  overflow: hidden;
-  padding: 5vw;
   background-color: #bdcdd6;
 }
 
@@ -85,8 +84,7 @@ body {
 
 .tabcontent {
   display: none;
-  height: 100vh;
-  position: relative;
+  padding: 3vw;
 }
 .tabcontent.active {
   display: block;
@@ -94,13 +92,10 @@ body {
 
 #header {
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 100;
-  padding: 2.5vw 5vw;
+  padding: 2vh 5vw;
   font-size: 1.2rem;
-  font-weight: 800;
+  font-weight: 600;
   background-color: #002b5b;
 }
 
@@ -111,24 +106,20 @@ body {
   text-decoration: underline;
 }
 
-.btns {
-  display: flex;
-  position: absolute;
-  bottom: 0;
-}
-
 #home div {
   line-height: 2rem;
 }
 
 #about .userName {
-  padding-top: 5vh;
   font-size: 12px;
 }
 #about .userName span {
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: underline;
+}
+#about .userName strong {
+  font-weight: 500;
 }
 #about .container {
   display: flex;
@@ -160,13 +151,13 @@ body {
   background-color: #fff;
 }
 #about .contactBox {
-  font-weight: 700;
   width: 15rem;
   margin-left: 1rem;
   background-color: #fff;
 }
 #about .contactBox .contact {
   padding: 0.5em 1em;
+  font-weight: 500;
   color: #fff;
   text-align: center;
   background-color: #002b5b;
@@ -180,9 +171,11 @@ body {
 }
 #about .contactBox li {
   width: 100%;
-  background-color: #ee6833;
-  text-align: center;
   padding: 0.5em 0;
+  background: radial-gradient(#ffe168, #ee6833);
+  cursor: pointer;
+  border-radius: 3px;
+  text-align: center;
 }
 #about .contactBox li:not(:last-child) {
   margin-bottom: 1rem;
@@ -201,21 +194,73 @@ body {
   background-color: #fff;
 }
 #about .aboutMe .title {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
-  font-weight: 700;
+  font-weight: 500;
   background-color: #93bfcf;
 }
 #about .aboutMe .basicInfo {
+  padding: 0.5rem 1rem;
   border: 1px solid #bdcdd6;
 }
 
-#project ul {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
+#project {
+  position: relative;
 }
-#project ul li {
-  width: 30vw;
-  margin: 1vw;
+#project li {
+  display: flex;
+  position: relative;
+  margin: 1rem;
+}
+#project li:not(:last-child) {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #6096b4;
+}
+#project .imgBox {
+  width: 25vw;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  background-color: #fff;
+}
+#project .imgBox img {
+  width: 100%;
+  vertical-align: top;
+}
+#project .prjInfo {
+  width: 50%;
+  padding: 1rem;
+}
+#project .prjInfo span {
+  font-size: 12px;
+}
+#project .prjTitle {
+  text-decoration: underline;
+}
+#project .linkBox a {
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  padding: 1rem;
+  transform: translateY(-50%);
+  background: linear-gradient(#eee9da 0%, #6096b4 50%);
+  border-radius: 3px;
+}
+#project .linkBox a:after {
+  display: inline-block;
+  position: absolute;
+  right: 5px;
+  bottom: -10px;
+  border-top: 15px solid #6096b4;
+  border-left: 20px solid transparent;
+  content: "";
+}
+
+.btns {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
 }
