@@ -62,9 +62,9 @@ body {
   background: radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)), transparent calc(52% + var(--t))), radial-gradient(farthest-side at 50% calc(0% - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)), transparent calc(52% + var(--t)));
   background-position: calc(var(--w) / 2) calc(var(--h) / 2), 0px calc(var(--h) / 2);
   background-size: var(--w) var(--h);
+  transition: opacity 4s linear;
   text-align: center;
   background-color: #bdcdd6;
-  transition: opacity 7s linear;
 }
 #wave.fadeOut {
   opacity: 0;
@@ -105,17 +105,20 @@ body {
 #header {
   width: 100%;
   z-index: 100;
-  padding: 2vh 5vw;
-  font-size: 1.2rem;
-  font-weight: 600;
+  padding: 1.5vw 3vw;
   background-color: #002b5b;
 }
 
 .tablinks {
+  font-size: 1.2rem;
   color: #eee9da;
 }
 .tablinks.active {
+  font-weight: 600;
   text-decoration: underline;
+}
+.tablinks:first-child {
+  margin-right: 10px;
 }
 
 #home .userName {
@@ -143,6 +146,8 @@ body {
 #home .profileImg {
   width: 12rem;
   margin-right: 3vw;
+  flex: 30%;
+  max-width: 12rem;
   background-color: #fff;
 }
 #home .profileImg img {
@@ -150,7 +155,7 @@ body {
   vertical-align: top;
 }
 #home .summary {
-  flex: auto;
+  flex: 70%;
 }
 #home .summary span {
   color: #eee9da;
@@ -163,6 +168,7 @@ body {
   width: 15rem;
   margin-left: 1rem;
   background-color: #fff;
+  min-width: 20vw;
 }
 #home .contactBox .contact {
   padding: 0.5em 1em;
@@ -216,10 +222,16 @@ body {
 #project {
   position: relative;
 }
+#project .subTitle {
+  margin-bottom: 1vw;
+}
 #project li {
   display: flex;
   position: relative;
-  margin: 1rem;
+  padding: 1rem;
+}
+#project li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 #project li:not(:last-child) {
   padding-bottom: 1rem;
@@ -229,14 +241,17 @@ body {
   width: 25vw;
   margin-right: 1rem;
   padding: 0.5rem;
+  min-width: 250px;
   background-color: #fff;
+  cursor: pointer;
 }
 #project .imgBox img {
   width: 100%;
   vertical-align: top;
+  cursor: inherit;
 }
 #project .prjInfo {
-  width: 50%;
+  width: 60%;
   padding: 1rem;
 }
 #project .prjInfo span {
@@ -246,11 +261,14 @@ body {
   font-size: 20px;
   text-decoration: underline;
 }
+#project .desc {
+  margin-top: 1rem;
+}
 #project .linkBox a {
   display: inline-block;
   position: absolute;
   top: 40%;
-  right: 0;
+  right: 1rem;
   padding: 1rem;
   font-weight: 500;
   transform: translateY(-50%);
@@ -269,9 +287,19 @@ body {
 
 .btns {
   display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
+  justify-content: space-evenly;
+  align-items: center;
   z-index: 100;
-  transform: translateX(-50%);
+  margin-top: 2rem;
+}
+.btns .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  font-weight: 800;
+  background: radial-gradient(#93bfcf, #6096b4);
+  border-radius: 3px;
+  cursor: pointer;
 }

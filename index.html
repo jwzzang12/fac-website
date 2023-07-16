@@ -38,8 +38,15 @@
         <div class="profile">
           <div class="profileImg"><img src="images/moon.png" alt="" /></div>
           <div class="summary">
-            <span>The one thing I am most passionate about:</span>
-            <div class="content">(empty)<br /><br /><br /><br /><br /></div>
+            <span>The things I am most passionate about:</span>
+            <div class="content">
+              I love creating things and always enjoy learning. That's why I'm drawn to software development. It's a field that allows me to be both
+              technical and creative. Learning never stops in software development. There are always new tools and technologies to explore. Luckily,
+              there are plenty of resources available, like books, online courses, and videos, to help me learn different programming languages and
+              frameworks.
+              <br />
+              (But also 🎬/⚽️/🎨)
+            </div>
           </div>
         </div>
         <div class="contactBox">
@@ -63,19 +70,10 @@
             level and kickstart my career in the tech industry in the UK.
           </div>
         </div>
-        <!-- <div class="basicInfoBox">
-          <div class="title">Basic Information</div>
-          <ul class="basicInfo">
-            <li>Occupation: :></li>
-            <li>Age: 1029></li>
-            <li>Religion: :></li>
-            <li>Hobby: :></li>
-          </ul>
-        </div> -->
       </div>
     </section>
     <section id="project" class="tabcontent">
-      <div>Hi, here are my projects.</div>
+      <div class="subTitle">Hi, here are my projects.</div>
       <div class="container">
         <ul>
           <li>
@@ -94,8 +92,8 @@
         </ul>
       </div>
       <div class="btns">
-        <div onclick="prev()"><</div>
-        <div onclick="next()">></div>
+        <div class="btn" onclick="prev()"><</div>
+        <div class="btn" onclick="next()">></div>
       </div>
     </section>
 
@@ -131,7 +129,7 @@
         setTimeout(() => {
           wave.parentNode.removeChild(wave);
           mainTitle.parentNode.removeChild(mainTitle);
-        }, 10000);
+        }, 7000);
       });
 
       //project
@@ -155,6 +153,7 @@
             <div class="prjInfo">
               <div class="prjTitle"><a href="${el.website}" target="_blank">${el.title}</a></div>
               <span class="stack">${el.stack}</span>
+              <div class="desc">${el.desc}</div>
             </div>
             <div class="linkBox">
               <a href="${el.github}" target="_blank">More Info</a>

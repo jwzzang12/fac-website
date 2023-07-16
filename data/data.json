@@ -13,6 +13,7 @@
       "github": "https://github.com/chingu-voyages/v41-toucans-team-04",
       "website": "https://development--toucan-coffee.netlify.app",
       "image": "./images/coffee.jpeg",
+      "desc": "Utilized React.js to build the Menu page and implement a user-friendly Cart hamburger menu • Elevated team members’ knowledge with prior React experience • Practiced Agile by engaging in weekly team meetings, tracking progress on Trello",
       "stack": "React | Router | Github"
     },
     {
@@ -20,6 +21,7 @@
       "github": "https://github.com/jwzzang12/paqago-react",
       "website": "https://moonjiwon-translator.netlify.app",
       "image": "./images/translator.jpeg",
+      "desc": "Created a server using Node.js and deployed it using fly.io, providing a backend for a translation function • Used Naver Papago API to enable translation functionality, allowing users to translate content in real-time • Utilized Axios to send content to the translation server and retrieve the translated results",
       "stack": "React | Node.js | Fly.io | Sass"
     },
     {
@@ -27,6 +29,7 @@
       "github": "https://github.com/jwzzang12/tmdb-clone",
       "website": "https://moonjiwon-tmdb-clone.netlify.app",
       "image": "./images/tmdb.jpeg",
+      "desc": "Used TMDB’s API and React Router to create an interactive website providing comprehensive information about movies, TV shows • Implemented search functionality allowing users to search for movies or TV series based on title • Created detailed pages for each search result, presenting in-depth information including ratings, plot summaries, and cast details",
       "stack": "React | Router | Axios | Sass"
     },
     {
@@ -34,12 +37,14 @@
       "github": "https://github.com/jwzzang12/todo-tada",
       "website": "https://moonjiwon-todo-tada.netlify.app",
       "image": "./images/todo.jpeg",
+      "desc": "Simple task app built with React, Redux • Intuitive UX design like adding tasks with “+” button or enter key, exiting task edit by clicking outside the edit window)",
       "stack": "React | Redux | Sass"
     },
     {
       "title": "The Weather App",
       "github": "https://github.com/jwzzang12/weather-app/tree/moon",
       "website": "https://moonjiwon-weather-app.netlify.app/",
+      "desc": "A simple weather app built with React using Openweather API • Utilized Geolocation’s customer hook to instantly locate user • Became well-versed with Github branching",
       "image": "./images/weather.jpeg",
       "stack": "React | Axios | Github | Sass"
     }
